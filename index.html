@@ -30,43 +30,83 @@
   <link rel="icon" type="image/png" href="favicon.png"/>
 
   <title>Emlak Portföy & Ofis Yönetimi</title>
-  <link rel="manifest" href="manifest.json">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
   <style>
-    .floating-download-pill {
+    .floating-download-widget {
       position: fixed;
-      top: 14px;
-      left: 14px;
-      z-index: 99999999;
+      z-index: 99999;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 9px 16px;
-      background: rgba(15, 23, 42, 0.92);
-      border: 1.5px solid #D4AF37;
+      gap: 6px;
+      padding: 6px 8px 6px 12px;
+      background: rgba(14, 21, 38, 0.92);
+      border: 1px solid rgba(212, 175, 55, 0.45);
       border-radius: 999px;
-      color: #F8FAFC;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      font-size: 13px;
-      font-weight: 700;
-      text-decoration: none;
       backdrop-filter: blur(12px);
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5), 0 0 14px rgba(212, 175, 55, 0.25);
-      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      transition: all 0.2s ease;
       user-select: none;
     }
-    .floating-download-pill:hover {
-      transform: translateY(-2px) scale(1.03);
-      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6), 0 0 22px rgba(212, 175, 55, 0.55);
-      background: #172554;
-      color: #FCD34D;
+    /* Mobile position: bottom-left (above bottom navigation, completely clear of top bars) */
+    @media (max-width: 767px) {
+      .floating-download-widget {
+        bottom: 84px;
+        left: 14px;
+      }
+    }
+    /* Desktop position: top-right */
+    @media (min-width: 768px) {
+      .floating-download-widget {
+        top: 14px;
+        right: 24px;
+      }
+    }
+    .download-widget-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #F1F5F9;
+      text-decoration: none;
+      font-size: 12.5px;
+      font-weight: 600;
+    }
+    .download-widget-link:hover {
+      color: #D4AF37;
+    }
+    .download-widget-close {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: none;
+      color: #94A3B8;
+      font-size: 11px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0;
+      transition: all 0.15s ease;
+    }
+    .download-widget-close:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: #FFFFFF;
     }
   </style>
-
-  <a href="download.html" class="floating-download-pill" title="Android ve Windows sürümlerini indir">
-    <span>⬇️</span>
-    <span>Uygulamayı İndir</span>
-  </a>
+</head>
+<body>
+  <div class="floating-download-widget" id="downloadWidget">
+    <a href="download.html" class="download-widget-link" title="Masaüstü ve mobil sürümleri indir">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+      <span>Uygulamayı İndir</span>
+    </a>
+    <button class="download-widget-close" onclick="document.getElementById('downloadWidget').style.display='none'" title="Kapat">✕</button>
+  </div>
 
   <script src="flutter_bootstrap.js" async></script>
 </body>

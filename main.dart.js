@@ -9822,6 +9822,7 @@ q.toString
 s=document
 r=s.createElement("a")
 r.href=q
+r.download=b
 r.target="_blank"
 r.rel="noopener"
 s=s.body
