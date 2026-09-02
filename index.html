@@ -30,84 +30,17 @@
   <link rel="icon" type="image/png" href="favicon.png"/>
 
   <title>Emlak Portföy & Ofis Yönetimi</title>
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-
-  <style>
-    .floating-download-widget {
-      position: fixed;
-      z-index: 99999;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 8px 6px 12px;
-      background: rgba(14, 21, 38, 0.92);
-      border: 1px solid rgba(212, 175, 55, 0.45);
-      border-radius: 999px;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      transition: all 0.2s ease;
-      user-select: none;
-    }
-    /* Mobile position: bottom-left (above bottom navigation, completely clear of top bars) */
-    @media (max-width: 767px) {
-      .floating-download-widget {
-        bottom: 84px;
-        left: 14px;
-      }
-    }
-    /* Desktop position: top-right */
-    @media (min-width: 768px) {
-      .floating-download-widget {
-        top: 14px;
-        right: 24px;
-      }
-    }
-    .download-widget-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: #F1F5F9;
-      text-decoration: none;
-      font-size: 12.5px;
-      font-weight: 600;
-    }
-    .download-widget-link:hover {
-      color: #D4AF37;
-    }
-    .download-widget-close {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.08);
-      border: none;
-      color: #94A3B8;
-      font-size: 11px;
-      cursor: pointer;
-      line-height: 1;
-      padding: 0;
-      transition: all 0.15s ease;
-    }
-    .download-widget-close:hover {
-      background: rgba(255, 255, 255, 0.2);
-      color: #FFFFFF;
-    }
-  </style>
+  <link rel="manifest" href="manifest.json">
 </head>
 <body>
-  <div class="floating-download-widget" id="downloadWidget">
-    <a href="download.html" class="download-widget-link" title="Masaüstü ve mobil sürümleri indir">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-      <span>Uygulamayı İndir</span>
-    </a>
-    <button class="download-widget-close" onclick="document.getElementById('downloadWidget').style.display='none'" title="Kapat">✕</button>
-  </div>
+  <!--
+    You can customize the "flutter_bootstrap.js" script.
+    This is useful to provide a custom configuration to the Flutter loader
+    or to give the user feedback during the initialization process.
 
+    For more details:
+    * https://docs.flutter.dev/platform-integration/web/initialization
+  -->
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
