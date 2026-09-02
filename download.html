@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Emlak Portföy — İndirme Merkezi</title>
-  <meta name="description" content="Emlak Portföy Android APK, Windows ve iOS sürümlerini keşfedin.">
+  <meta name="description" content="Emlak Portföy Web sürümünü açın veya Android APK indirin.">
   <meta name="theme-color" content="#080C15">
   <link rel="icon" type="image/png" href="favicon.png">
 
@@ -39,7 +39,7 @@
     }
 
     .container {
-      max-width: 1040px;
+      max-width: 860px;
       margin: 0 auto;
       padding: 0 24px;
       width: 100%;
@@ -116,8 +116,8 @@
     /* Platform Cards Grid */
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
       margin-bottom: 32px;
     }
 
@@ -125,7 +125,7 @@
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 28px;
+      padding: 30px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -140,7 +140,7 @@
     /* Recommended Highlight */
     .platform-card.detected {
       border-color: var(--gold);
-      box-shadow: 0 0 24px rgba(212, 175, 55, 0.12);
+      box-shadow: 0 0 28px rgba(212, 175, 55, 0.14);
     }
 
     .pill-badge {
@@ -168,36 +168,48 @@
       margin-bottom: 18px;
     }
     .platform-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
       background: rgba(255, 255, 255, 0.04);
       display: flex;
       align-items: center;
       justify-content: center;
       border: 1px solid var(--border);
+      flex-shrink: 0;
     }
     .platform-icon svg {
-      width: 22px;
-      height: 22px;
+      width: 24px;
+      height: 24px;
       fill: var(--text);
     }
 
-    .platform-title {
-      font-size: 18px;
+    .platform-tag {
+      font-size: 11.5px;
       font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.2px;
+      display: block;
+      margin-bottom: 2px;
     }
+
+    .platform-title {
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+    }
+
     .platform-desc {
-      font-size: 13.5px;
+      font-size: 14px;
       color: var(--text-muted);
-      line-height: 1.5;
+      line-height: 1.55;
       margin-bottom: 24px;
-      min-height: 42px;
+      min-height: 44px;
     }
 
     .specs-meta {
       display: flex;
-      gap: 14px;
+      gap: 16px;
       font-size: 12px;
       color: var(--text-dim);
       margin-bottom: 20px;
@@ -215,9 +227,9 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 12px 20px;
+      padding: 13px 20px;
       border-radius: 10px;
-      font-size: 14px;
+      font-size: 14.5px;
       font-weight: 600;
       text-decoration: none;
       transition: all 0.15s ease;
@@ -298,12 +310,43 @@
       
       <div class="section-header">
         <h1>İndirme Merkezi</h1>
-        <p>Masaüstü ve mobil cihazlarınız için optimize edilmiş sürümler.</p>
+        <p>Cihazınıza en uygun sürümü seçerek hemen kullanmaya başlayın.</p>
       </div>
 
       <div class="cards-grid">
 
-        <!-- Android -->
+        <!-- 1. Web Sürümü (Windows & iOS) -->
+        <div class="platform-card" id="card-web">
+          <span class="pill-badge" id="badge-web">Cihazınız İçin Önerilir</span>
+          <div>
+            <div class="platform-header">
+              <div class="platform-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              </div>
+              <div>
+                <span class="platform-tag">Windows & iOS İçin Önerilir</span>
+                <h2 class="platform-title">Web Sürümünü Aç</h2>
+              </div>
+            </div>
+            <p class="platform-desc">
+              Tarayıcınız üzerinden indirmeye gerek olmadan anında kullanın. Windows masaüstü veya iOS (iPhone / iPad) ana ekranınıza uygulama olarak eklenebilir.
+            </p>
+          </div>
+
+          <div>
+            <div class="specs-meta">
+              <span>Uyum: <strong>Windows, iOS, Mac</strong></span>
+              <span>Tür: <strong>Web & PWA</strong></span>
+            </div>
+            <a href="./" class="btn-action btn-secondary" id="btn-web">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              <span>Web Sürümünü Aç</span>
+            </a>
+            <span class="alt-info">Windows, iPhone ve iPad için optimize edilmiştir</span>
+          </div>
+        </div>
+
+        <!-- 2. Android APK -->
         <div class="platform-card" id="card-android">
           <span class="pill-badge" id="badge-android">Cihazınız İçin Önerilir</span>
           <div>
@@ -312,11 +355,12 @@
                 <svg viewBox="0 0 24 24"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-1.0003s.4482-1.0003.9993-1.0003c.5517 0 .9993.4486.9993 1.0003s-.4476 1.0003-.9993 1.0003m-11.046 0c-.5511 0-.9993-.4486-.9993-1.0003s.4482-1.0003.9993-1.0003c.5516 0 .9992.4486.9992 1.0003s-.4476 1.0003-.9992 1.0003m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.4114 13.8563 8 12 8s-3.5902.4114-5.1368 1.1504L4.841 5.6474a.416.416 0 00-.5677-.1521.4158.4158 0 00-.152 1.5676l1.9973 3.4592C2.6889 12.2355.4336 16.035.4336 20.407h23.1328c0-4.372-2.2553-8.1715-5.6874-11.0856"/></svg>
               </div>
               <div>
-                <h2 class="platform-title">Android</h2>
+                <span class="platform-tag">Android Cihazlar İçin Önerilir</span>
+                <h2 class="platform-title">Android APK İndir</h2>
               </div>
             </div>
             <p class="platform-desc">
-              Akıllı telefon ve tabletler için doğrudan kurulum paketi. Google Play beklemeden en güncel sürüm.
+              Android telefon ve tabletler için doğrudan kurulum paketi. Google Play beklemeden en güncel sürüm ile yerel uygulama deneyimi.
             </p>
           </div>
 
@@ -331,66 +375,6 @@
               <span>APK Dosyasını İndir</span>
             </a>
             <a href="./" class="alt-link">veya Tarayıcıda Aç (Web) ➔</a>
-          </div>
-        </div>
-
-        <!-- Windows -->
-        <div class="platform-card" id="card-windows">
-          <span class="pill-badge" id="badge-windows">Cihazınız İçin Önerilir</span>
-          <div>
-            <div class="platform-header">
-              <div class="platform-icon">
-                <svg viewBox="0 0 24 24"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.551H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.949-1.801"/></svg>
-              </div>
-              <div>
-                <h2 class="platform-title">Windows</h2>
-              </div>
-            </div>
-            <p class="platform-desc">
-              Masaüstü bilgisayarınızda geniş ekran portföy yönetimi ve hızlı sözleşme takibi.
-            </p>
-          </div>
-
-          <div>
-            <div class="specs-meta">
-              <span>Sistem: <strong>Win 10 / 11</strong></span>
-              <span>Tür: <strong>Web & Masaüstü</strong></span>
-            </div>
-            <a href="./" class="btn-action btn-secondary" id="btn-windows">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-              <span>Web Sürümünü Aç</span>
-            </a>
-            <span class="alt-info">Tarayıcıdan masaüstüne uygulama olarak yüklenebilir</span>
-          </div>
-        </div>
-
-        <!-- Apple iOS -->
-        <div class="platform-card" id="card-ios">
-          <span class="pill-badge" id="badge-ios">Cihazınız İçin Önerilir</span>
-          <div>
-            <div class="platform-header">
-              <div class="platform-icon">
-                <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.85c.66-.82 1.11-1.96.99-3.1-.96.04-2.12.64-2.8 1.44-.59.69-1.11 1.83-.97 2.94 1.07.08 2.12-.46 2.78-1.28z"/></svg>
-              </div>
-              <div>
-                <h2 class="platform-title">Apple iOS</h2>
-              </div>
-            </div>
-            <p class="platform-desc">
-              iPhone ve iPad için optimize edilmiş tam ekran mobil gayrimenkul deneyimi.
-            </p>
-          </div>
-
-          <div>
-            <div class="specs-meta">
-              <span>Sistem: <strong>iOS 15+</strong></span>
-              <span>Tür: <strong>Safari & Web PWA</strong></span>
-            </div>
-            <a href="./" class="btn-action btn-secondary" id="btn-ios">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-              <span>Web Sürümünü Aç</span>
-            </a>
-            <span class="alt-info">Safari'de Paylaş ➔ "Ana Ekrana Ekle" ile çalışır</span>
           </div>
         </div>
 
@@ -409,24 +393,15 @@
     (function detectPlatform() {
       const ua = navigator.userAgent || navigator.vendor || window.opera;
       const isAndroid = /android/i.test(ua);
-      const isWindows = /windows/i.test(ua);
-      const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
 
       if (isAndroid) {
         document.getElementById('card-android').classList.add('detected');
-      } else if (isWindows) {
-        document.getElementById('card-windows').classList.add('detected');
-        const winBtn = document.getElementById('btn-windows');
-        if (winBtn) {
-          winBtn.classList.remove('btn-secondary');
-          winBtn.classList.add('btn-primary');
-        }
-      } else if (isIOS) {
-        document.getElementById('card-ios').classList.add('detected');
-        const iosBtn = document.getElementById('btn-ios');
-        if (iosBtn) {
-          iosBtn.classList.remove('btn-secondary');
-          iosBtn.classList.add('btn-primary');
+      } else {
+        document.getElementById('card-web').classList.add('detected');
+        const webBtn = document.getElementById('btn-web');
+        if (webBtn) {
+          webBtn.classList.remove('btn-secondary');
+          webBtn.classList.add('btn-primary');
         }
       }
     })();
